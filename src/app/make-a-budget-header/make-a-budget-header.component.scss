@@ -1,0 +1,27 @@
+@import './../../layout/colours.scss';
+
+.header {
+    @include Staat-large;
+    color: $base-white;
+    
+    height: 46px;
+    line-height: 46px;
+    width: 100%;
+    background-color: $base-red;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    box-shadow: 2px 2px 3px #ccc;
+    padding-left: 14px;
+    padding-right: 14px;
+    
+}
+
+.leftside {
+    width: 90%;
+    float: left;
+}
+
+.rightside {
+    width: 10%;
+    float: right;
+}

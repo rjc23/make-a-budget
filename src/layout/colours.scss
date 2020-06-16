@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&family=Varela+Round&display=swap');
+
+$base-red: #ae4d53;
+$base-orange: #e8af70;
+$base-blue: #319799;
+$base-yellow: #f8ec9e;
+$base-green: #1b5f59;
+$base-white: #ffffff;
+
+$header-font: 'Staatliches', cursive;
+$main-font: 'Varela Round', sans-serif;
+
+//Fonts and Sizes
+@mixin Staat-large {
+    font-family: $header-font;
+    font-size: 30px;
+}
+
+@mixin Valera-title {
+    font-family: $main-font;
+    font-size: 25px;
+}
+

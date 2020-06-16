@@ -1,0 +1,15 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.income-box {
+    border-style: solid;
+    border-color: red;
+    border-width: 1px;
+    border-radius: 4px;
+    text-align: center;
+    min-width: 100px;
+}
