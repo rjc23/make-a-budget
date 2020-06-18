@@ -7,6 +7,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IncomeComponent implements OnInit {
 
+  boxes: any = [
+    {
+    name: 'hello'
+    },
+    {
+      name: 'there'
+    },
+    {
+      name: 'what'
+    },
+    {
+      name: 'is'
+    },
+    {
+      name: 'happening'
+    },
+    {
+      name: 'what'
+    },
+    {
+      name: 'is'
+    },
+    {
+      name: 'happening'
+    }
+];
+
   constructor() { }
 
   ngOnInit(): void {

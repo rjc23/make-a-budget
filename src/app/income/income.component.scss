@@ -1,3 +1,10 @@
+@import './../../layout/colours.scss';
+@import './../../layout/breakpoints.scss';
+
+.budgeth1 {
+    @include Staat-large-h1;
+}
+
 .wrapper {
     display: flex;
     flex-direction: row;
@@ -5,11 +12,41 @@
     justify-content: flex-start;
 }
 
-.income-box {
+.box {
+    flex-basis: 100%;
+}
+
+.box-content {
     border-style: solid;
-    border-color: red;
+    border-color: lightgrey;
     border-width: 1px;
-    border-radius: 4px;
-    text-align: center;
-    min-width: 100px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #F0F0F0;
+    height: 75px;
+    margin: 8px;
+}
+
+@include respond-to(extra-small) {
+    .box {
+        flex-basis: 50%;
+    }
+}
+
+@include respond-to(small) {
+    .box {
+        flex-basis: 33.3333%;
+    }
+}
+
+@include respond-to(medium) {
+    .box {
+        flex-basis: 25%;
+    }
+}
+
+@include respond-to(large) {
+    .box {
+        flex-basis: 20%;
+    }
 }

@@ -16,6 +16,11 @@ $main-font: 'Varela Round', sans-serif;
     font-size: 30px;
 }
 
+@mixin Staat-large-h1 {
+    font-family: $header-font;
+    font-size: 46px;
+}
+
 @mixin Valera-title {
     font-family: $main-font;
     font-size: 25px;

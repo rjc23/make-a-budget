@@ -1,42 +1,13 @@
 
 <br>
 <br>
+<h1 class="budgeth1">Make a budget</h1>
 
 <div class="wrapper">
-      <div class="income-box">
-        ONEONE
-      </div>
-      <div class="income-box">
-        TWOTWO
-      </div>
-      <div class="income-box">
-        THREETHREE
-      </div>
-      <div class="income-box">
-        FOURFOUR
-      </div>
-      <div class="income-box">
-        ONEONE
-      </div>
-      <div class="income-box">
-        TWOTWO
-      </div>
-      <div class="income-box">
-        THREETHREE
-      </div>
-      <div class="income-box">
-        FOURFOUR
-      </div>
-      <div class="income-box">
-        ONEONE
-      </div>
-      <div class="income-box">
-        TWOTWO
-      </div>
-      <div class="income-box">
-        THREETHREE
-      </div>
-      <div class="income-box">
-        FOURFOUR
-      </div>
+  <div class="box" *ngFor="let box of boxes">
+    <div class="box-content">
+      {{box.name}}
+    </div>
+      
   </div>
+</div>
