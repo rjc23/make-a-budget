@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { DataGetterService } from './../services/data-getter.service';
 
 @Component({
   selector: 'app-income',
@@ -7,36 +9,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IncomeComponent implements OnInit {
 
+  time: any;
+  showNewElement: boolean;
+
   boxes: any = [
     {
-    name: 'hello'
+      incomeName: 'Work',
+      amount: 20000,
+      per: 'week'
     },
     {
-      name: 'there'
-    },
-    {
-      name: 'what'
-    },
-    {
-      name: 'is'
-    },
-    {
-      name: 'happening'
-    },
-    {
-      name: 'what'
-    },
-    {
-      name: 'is'
-    },
-    {
-      name: 'happening'
+      incomeName: 'Side Hussle',
+      amount: 500,
+      per: 'fortnight'
     }
 ];
 
-  constructor() { }
+  constructor(private dataGetter: DataGetterService) { }
 
   ngOnInit(): void {
+    this.showNewElement = true;
+  }
+
+  addNewElement() {
+    this.showNewElement = true;
+  }
+
+  hideNewElement() {
+    this.showNewElement = false;
+  }
+
+  submitIncome(value) {
+    console.log(value);
   }
 
 }

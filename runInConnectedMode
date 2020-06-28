@@ -1,0 +1,11 @@
+#!/bin/bash
+ng build
+cd dist
+rm -r -f dist
+mv make-a-budget dist
+cd ..
+cd ..
+cd ..
+cp -R Budget/make-a-budget/dist/dist NodePractice/functions/
+cd NodePractice
+firebase serve --only functions,hosting

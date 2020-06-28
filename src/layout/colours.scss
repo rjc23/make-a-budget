@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Puritan&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
 
 $base-red: #ae4d53;
 $base-orange: #e8af70;
@@ -8,7 +12,7 @@ $base-green: #1b5f59;
 $base-white: #ffffff;
 
 $header-font: 'Staatliches', cursive;
-$main-font: 'Varela Round', sans-serif;
+$main-font: 'Ubuntu', sans-serif;
 
 //Fonts and Sizes
 @mixin Staat-large {
@@ -21,8 +25,18 @@ $main-font: 'Varela Round', sans-serif;
     font-size: 46px;
 }
 
+@mixin Valera-very-big {
+    font-family: $main-font;
+    font-size: 30px;
+}
+
 @mixin Valera-title {
     font-family: $main-font;
-    font-size: 25px;
+    font-size: 16px;
+}
+
+@mixin Valera-small {
+    font-family: $main-font;
+    font-size: 12px;
 }
 

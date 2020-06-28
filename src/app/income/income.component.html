@@ -1,13 +1,78 @@
 
 <br>
 <br>
-<h1 class="budgeth1">Make a budget</h1>
+<!-- <h1 class="budgeth1">Make a budget</h1> -->
 
 <div class="wrapper">
+
+  <!-- Incomes -->
   <div class="box" *ngFor="let box of boxes">
     <div class="box-content">
-      {{box.name}}
+      <div class="exit">
+        <span class="glyphicon glyphicon-remove"></span>
+      </div>
+
+      <div class="informationContainer">
+        <div class="valera-font">
+          <b><span class="floatBottom">{{box.incomeName}}</span></b>
+        </div>
+        <div class="valera-font">
+          {{box.amount | currency}} / <span class="valera-small">{{box.per}}</span>
+        </div>
+      </div>
     </div>
-      
+  </div>
+
+  <div *ngIf="showNewElement" class="box">
+    <div class="box-content box-content-add-new-income">
+      <form>
+        <div class="form-wrapper">
+          <!-- input fields -->
+          <div class="input-fields">
+            <!-- income name -->
+            <div class="income-name">
+              <input type="text" maxlength="30" class="form-control" placeholder="Income Name">
+            </div>
+            <!-- cost per -->
+            <div class="cost-per">
+              <div class="input-icon">
+                <input type="text" maxlength="12" class="form-control" placeholder="0.00">
+                <i>$</i>
+              </div>
+              <span class="valera-font">&nbsp;/&nbsp;</span>
+              <div class="per-dropdown">
+                <select class="form-control"  name="cars">
+                  <option value="week">Week</option>
+                  <option value="twoweeks">Two weeks</option>
+                  <option value="month">Month</option>
+                  <option value="year">Year</option>
+                </select>
+              </div>
+            </div>
+
+          </div>
+          <!-- submit & delete buttons -->
+          <div class="submit-and-delete">
+            <div (click)="submitIncome(form)"  class="add-button">
+              <div class="glyphicon glyphicon-ok"></div>
+            </div>
+            <div class="remove-button">
+              <div class="glyphicon glyphicon-remove"></div>
+            </div>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <!-- add button -->
+  <div (click)="addNewElement()" class="centerAdd">
+    <div class="addButton-box-content">
+      <div class="glyphicon glyphicon-plus"></div>
+    </div>
   </div>
 </div>
+
+
+<!-- style="border-style: solid; border-width: 1px; border-color: black;" -->
