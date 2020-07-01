@@ -1,8 +1,12 @@
 @import './../../layout/colours.scss';
 @import './../../layout/breakpoints.scss';
 
-.budgeth1 {
-    @include Staat-large-h1;
+.income-text {
+    padding-left: 8px;
+    h3 {
+        @include Staat-large;
+        margin-bottom: 10px;
+    }
 }
 
 .wrapper {
@@ -10,10 +14,12 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    padding-left: 20px;
 }
 
 .box {
     flex-basis: 100%;
+    padding: 8px;
 }
 
 .box-content {
@@ -24,7 +30,7 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background-color: #F0F0F0;
     height: 75px;
-    margin: 8px;
+    // margin: 8px;
 }
 
 .centerAdd {
@@ -126,7 +132,11 @@
         }
         
         .income-name {
-            margin-bottom: 1px;
+            margin-bottom: 3px;
+            input {
+                max-height: 25px;
+                @include Valera-small;
+            }
         }
 
         .cost-per {
@@ -136,6 +146,15 @@
             }
             .per-dropdown {
                 width: 45%;
+                select {
+                    max-height: 25px;
+                    background-color: white;
+                    @include Valera-small;
+                }
+            }
+            input {
+                max-height: 25px;
+                @include Valera-small;
             }
         }
     }
@@ -145,6 +164,7 @@
         // border-width: 1px;
         // border-color: red;
         flex-grow: 1;
+        min-width: 40px;
 
         display: flex;
         flex-direction: column;
@@ -170,7 +190,7 @@
             justify-content: center;
             // padding-bottom: 8px;
             div {
-                // transform: translate(0, -15%);
+                transform: translate(0, 5%);
             }
         }
         .remove-button {
@@ -189,7 +209,7 @@
             justify-content: center;
 
             div {
-                transform: translate(0, 8%);
+                transform: translate(0, 12%);
             }
         }
     }

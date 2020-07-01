@@ -1,8 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Staatliches&family=Varela+Round&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Puritan&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap');
 
 $base-red: #ae4d53;
 $base-orange: #e8af70;
@@ -11,18 +8,23 @@ $base-yellow: #f8ec9e;
 $base-green: #1b5f59;
 $base-white: #ffffff;
 
-$header-font: 'Staatliches', cursive;
+$header-font: 'Open Sans', cursive;
 $main-font: 'Ubuntu', sans-serif;
 
 //Fonts and Sizes
-@mixin Staat-large {
-    font-family: $header-font;
-    font-size: 30px;
+@mixin Staat-large-h1 {
+    font-family: $main-font;
+    font-size: 42px;
 }
 
-@mixin Staat-large-h1 {
-    font-family: $header-font;
-    font-size: 46px;
+@mixin Staat-large {
+    font-family: $main-font;
+    font-size: 26px;
+}
+
+@mixin Staat-small {
+    font-family: $main-font;
+    font-size: 14.7px;
 }
 
 @mixin Valera-very-big {
@@ -37,6 +39,6 @@ $main-font: 'Ubuntu', sans-serif;
 
 @mixin Valera-small {
     font-family: $main-font;
-    font-size: 12px;
+    font-size: 13px;
 }
 

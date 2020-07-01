@@ -1,14 +1,14 @@
 
-<br>
-<br>
-<!-- <h1 class="budgeth1">Make a budget</h1> -->
+<div class="income-text">
+  <h3>Your income</h3>
+</div>
 
 <div class="wrapper">
 
   <!-- Incomes -->
-  <div class="box" *ngFor="let box of boxes">
+  <div class="box" *ngFor="let box of boxes; let i = index" [attr.data-index]="i">
     <div class="box-content">
-      <div class="exit">
+      <div (click)=removeIncome(i) class="exit">
         <span class="glyphicon glyphicon-remove"></span>
       </div>
 
@@ -25,25 +25,25 @@
 
   <div *ngIf="showNewElement" class="box">
     <div class="box-content box-content-add-new-income">
-      <form>
+      <form [formGroup]="myForm">
         <div class="form-wrapper">
           <!-- input fields -->
           <div class="input-fields">
             <!-- income name -->
             <div class="income-name">
-              <input type="text" maxlength="30" class="form-control" placeholder="Income Name">
+              <input formControlName="incomeName" type="text" maxlength="30" class="form-control" placeholder="Income Name" required>
             </div>
             <!-- cost per -->
             <div class="cost-per">
               <div class="input-icon">
-                <input type="text" maxlength="12" class="form-control" placeholder="0.00">
+                <input formControlName="amount" type="text" maxlength="12" class="form-control" placeholder="0.00">
                 <i>$</i>
               </div>
               <span class="valera-font">&nbsp;/&nbsp;</span>
               <div class="per-dropdown">
-                <select class="form-control"  name="cars">
-                  <option value="week">Week</option>
-                  <option value="twoweeks">Two weeks</option>
+                <select formControlName="per" class="form-control">
+                  <option value="week" selected>Week</option>
+                  <option value="two weeks">Two weeks</option>
                   <option value="month">Month</option>
                   <option value="year">Year</option>
                 </select>
@@ -53,15 +53,14 @@
           </div>
           <!-- submit & delete buttons -->
           <div class="submit-and-delete">
-            <div (click)="submitIncome(form)"  class="add-button">
+            <div (click)="submitIncome()"  class="add-button">
               <div class="glyphicon glyphicon-ok"></div>
             </div>
-            <div class="remove-button">
+            <div (click)="hideNewElement()" class="remove-button">
               <div class="glyphicon glyphicon-remove"></div>
             </div>
           </div>
         </div>
-
       </form>
     </div>
   </div>
@@ -73,6 +72,13 @@
     </div>
   </div>
 </div>
+
+
+<!-- <form [formGroup]="myForm">
+  <mat-form-field>
+    <input matInput placeholder="" formControlName="incomeName">
+  </mat-form-field>
+</form> -->
 
 
 <!-- style="border-style: solid; border-width: 1px; border-color: black;" -->

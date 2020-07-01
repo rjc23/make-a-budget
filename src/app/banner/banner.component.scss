@@ -1,0 +1,26 @@
+
+
+@import './../../layout/colours.scss';
+@import './../../layout/breakpoints.scss';
+
+.banner {
+    width: 100%;
+    height: 25vh;
+    background: rgb(224,200,165);
+    background: linear-gradient(90deg, rgba(224,200,165,1) 14%, rgba(185,162,128,1) 100%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 40px;
+
+    h1 {
+        @include Staat-large-h1;
+        margin-bottom: 10px;
+    }
+    span {
+        @include Staat-small;
+    }
+}
