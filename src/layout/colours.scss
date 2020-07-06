@@ -17,14 +17,24 @@ $main-font: 'Ubuntu', sans-serif;
     font-size: 42px;
 }
 
+@mixin Staat-large-h1-mobile {
+    font-family: $main-font;
+    font-size: 32px;
+}
+
 @mixin Staat-large {
     font-family: $main-font;
-    font-size: 26px;
+    font-size: 30px;
 }
 
 @mixin Staat-small {
     font-family: $main-font;
     font-size: 14.7px;
+}
+
+@mixin Staat-small-mobile {
+    font-family: $main-font;
+    font-size: 11.1px;
 }
 
 @mixin Valera-very-big {

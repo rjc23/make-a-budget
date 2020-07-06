@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormDataService } from '../form-data.service';
 
 @Component({
   selector: 'app-layout',
@@ -7,22 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutComponent implements OnInit {
 
-  boxes: any = [
-    {
-      incomeName: 'Work',
-      amount: 20000,
-      per: 'week'
-    },
-    {
-      incomeName: 'Side Hussle',
-      amount: 500,
-      per: 'fortnight'
-    }
-];
+  boxTypes: string[];
+  boxes: any;
 
-  constructor() { }
+  constructor(private formDataService: FormDataService) { }
 
   ngOnInit(): void {
+    this.boxes = this.formDataService.prepopulatedIncomeData();
+    this.boxTypes = this.formDataService.getBoxTypes();
   }
-
 }

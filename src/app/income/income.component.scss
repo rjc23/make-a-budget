@@ -3,9 +3,17 @@
 
 .income-text {
     padding-left: 8px;
-    h3 {
-        @include Staat-large;
-        margin-bottom: 10px;
+    @include Staat-large;
+    margin-bottom: 10px;
+}
+
+.buttons {
+    padding-left: 8px;
+    padding-bottom: 6px;
+    .btn {
+        @include Valera-small;
+        margin-right: 8px;
+        font-size: 12px;
     }
 }
 
@@ -14,12 +22,11 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    padding-left: 20px;
 }
 
 .box {
     flex-basis: 100%;
-    padding: 8px;
+    // margin: 8px;
 }
 
 .box-content {
@@ -30,7 +37,7 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background-color: #F0F0F0;
     height: 75px;
-    // margin: 8px;
+    margin: 8px;
 }
 
 .centerAdd {
@@ -180,6 +187,7 @@
             width: 100%;
             height: 100%;
             padding: 2px;
+            padding-top: 4px;
             background-color: #4caf4f;;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             // border-style: solid;
@@ -189,9 +197,6 @@
             display: flex;
             justify-content: center;
             // padding-bottom: 8px;
-            div {
-                transform: translate(0, 5%);
-            }
         }
         .remove-button {
             cursor: pointer;
@@ -199,6 +204,7 @@
             height: 100%;
             margin-top: 4px;
             padding: 2px;
+            padding-top: 5px;
             background-color: red;
             box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.19);
             // border-style: solid;
@@ -207,10 +213,6 @@
             border-radius: 3px;
             display: flex;
             justify-content: center;
-
-            div {
-                transform: translate(0, 12%);
-            }
         }
     }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, DoCheck } from '@angular/core';
 import { DataGetterService } from './../services/data-getter.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
@@ -7,12 +7,16 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   templateUrl: './income.component.html',
   styleUrls: ['./income.component.scss']
 })
-export class IncomeComponent implements OnInit {
+export class IncomeComponent implements OnInit, DoCheck {
 
   @Input('boxes') boxes: any;
-  time: any;
+  @Input('type') type: any;
+
   showNewElement: boolean;
   myForm: FormGroup;
+  savedBoxes: any;
+  isSaved: boolean;
+  isLoading: boolean = true;
 
   constructor(private dataGetter: DataGetterService, private fb: FormBuilder) { }
 
@@ -24,8 +28,14 @@ export class IncomeComponent implements OnInit {
       amount: '',
       per: ''
     })
+    // this.myForm.valueChanges.subscribe(console.log);
+  }
 
-    //this.myForm.valueChanges.subscribe(console.log);
+  ngDoCheck() {
+    if(this.isSaved && this.isLoading == false) {
+      this.isSaved = false;
+    }
+    this.isLoading = false;
   }
 
   addNewElement() {
@@ -54,4 +64,14 @@ export class IncomeComponent implements OnInit {
   //   }
    }
 
+   clearBoxes() {
+     this.savedBoxes = this.boxes;
+     this.isSaved = true;
+     this.boxes = [];
+   }
+
+   undoClear() {
+     this.boxes = this.savedBoxes;
+     this.isSaved = false;
+   }
 }

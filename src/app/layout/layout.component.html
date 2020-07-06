@@ -3,5 +3,9 @@
     <app-banner></app-banner>
     <br>
     <br>
-    <app-income [boxes]="boxes"></app-income>
+    <div class="content">
+        <app-income [boxes]="boxes.income" [type]="boxTypes[0]"></app-income>
+        <app-income [boxes]="boxes.expenses" [type]="boxTypes[1]"></app-income>
+    </div>
+    
 </div>

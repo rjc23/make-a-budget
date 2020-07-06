@@ -10,13 +10,9 @@ import { IncomeComponent } from './income/income.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatButtonModule } from '@angular/material/button';
-import { MatInputModule } from '@angular/material/input';
-import { MatSelectModule } from '@angular/material/select';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatChipsModule } from '@angular/material/chips';
 import { LayoutComponent } from './layout/layout.component';
 import { BannerComponent } from './banner/banner.component';
+import { FormDataService } from './form-data.service';
 
 
 @NgModule({
@@ -32,14 +28,9 @@ import { BannerComponent } from './banner/banner.component';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule,
-    MatButtonModule,
-    MatInputModule,
-    MatSelectModule,
-    MatCheckboxModule,
-    MatChipsModule 
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [FormDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

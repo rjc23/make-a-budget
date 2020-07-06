@@ -1,5 +1,5 @@
 #!/bin/bash
-ng build
+ng build --prod
 cd dist
 rm -r -f dist
 mv make-a-budget dist

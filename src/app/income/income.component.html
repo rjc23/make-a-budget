@@ -1,15 +1,22 @@
-
-<div class="income-text">
-  <h3>Your income</h3>
+<br />
+<br />
+<h3 class="income-text"><b>Your {{type}}</b></h3>
+<div class="buttons">
+  <button type="button" class="btn btn-primary">Pre-populate</button>
+  <button *ngIf="!isSaved; else elseBlock" (click)="clearBoxes()" type="button" class="btn btn-warning">Clear</button>
+  <ng-template #elseBlock>
+    <button (click)="undoClear()" type="button" class="btn btn-warning">Undo</button>
+  </ng-template>
 </div>
+
 
 <div class="wrapper">
 
   <!-- Incomes -->
   <div class="box" *ngFor="let box of boxes; let i = index" [attr.data-index]="i">
     <div class="box-content">
-      <div (click)=removeIncome(i) class="exit">
-        <span class="glyphicon glyphicon-remove"></span>
+      <div class="exit">
+        <span (click)=removeIncome(i) class="glyphicon glyphicon-remove"></span>
       </div>
 
       <div class="informationContainer">
@@ -22,6 +29,8 @@
       </div>
     </div>
   </div>
+
+  
 
   <div *ngIf="showNewElement" class="box">
     <div class="box-content box-content-add-new-income">
@@ -36,7 +45,7 @@
             <!-- cost per -->
             <div class="cost-per">
               <div class="input-icon">
-                <input formControlName="amount" type="text" maxlength="12" class="form-control" placeholder="0.00">
+                <input formControlName="amount" type="text" maxlength="12" placeholder="0.00" class="form-control">
                 <i>$</i>
               </div>
               <span class="valera-font">&nbsp;/&nbsp;</span>
@@ -53,12 +62,8 @@
           </div>
           <!-- submit & delete buttons -->
           <div class="submit-and-delete">
-            <div (click)="submitIncome()"  class="add-button">
-              <div class="glyphicon glyphicon-ok"></div>
-            </div>
-            <div (click)="hideNewElement()" class="remove-button">
-              <div class="glyphicon glyphicon-remove"></div>
-            </div>
+            <div (click)="submitIncome()" class="glyphicon glyphicon-ok add-button"> Add</div>
+            <div (click)="hideNewElement()" class="glyphicon glyphicon-remove remove-button">Remove</div>
           </div>
         </div>
       </form>
@@ -66,7 +71,7 @@
   </div>
 
   <!-- add button -->
-  <div (click)="addNewElement()" class="centerAdd">
+  <div *ngIf="!showNewElement" (click)="addNewElement()" class="centerAdd">
     <div class="addButton-box-content">
       <div class="glyphicon glyphicon-plus"></div>
     </div>
