@@ -16,5 +16,6 @@ export class LayoutComponent implements OnInit {
   ngOnInit(): void {
     this.boxes = this.formDataService.prepopulatedIncomeData();
     this.boxTypes = this.formDataService.getBoxTypes();
+    this.formDataService.calculateTotals();
   }
 }

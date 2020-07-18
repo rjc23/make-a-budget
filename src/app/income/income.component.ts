@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, DoCheck } from '@angular/core';
-import { DataGetterService } from './../services/data-getter.service';
+import { FormDataService } from './../form-data.service';
+import { Component, OnInit, Input, DoCheck} from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
@@ -18,7 +18,7 @@ export class IncomeComponent implements OnInit, DoCheck {
   isSaved: boolean;
   isLoading: boolean = true;
 
-  constructor(private dataGetter: DataGetterService, private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private dataservice: FormDataService) { }
 
   ngOnInit(): void {
     //Initalise form
@@ -50,6 +50,7 @@ export class IncomeComponent implements OnInit, DoCheck {
   submitIncome() {
     if(this.myForm.valid) {
       this.boxes.push(this.myForm.value);
+      this.dataservice.recalculateBoxes(this.type);
       this.myForm.reset();
       this.showNewElement = false;
     }
@@ -57,11 +58,7 @@ export class IncomeComponent implements OnInit, DoCheck {
 
   removeIncome(input:any) {
     this.boxes.splice(input,1);
-  //   for(let i = 0; i < this.boxes.length; i++) {
-  //     if(i === input) {
-  //       console.log('yes');
-  //     }
-  //   }
+    this.dataservice.recalculateBoxes(this.type);
    }
 
    clearBoxes() {

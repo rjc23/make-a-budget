@@ -1,0 +1,77 @@
+@import './../../layout/colours.scss';
+@import './../../layout/breakpoints.scss';
+
+.box {
+    //flex-basis: 100%;
+    // margin: 8px;
+}
+
+.indented-box {
+    height: 80px;
+    width: 95%;
+    display: flex;
+}
+
+.totals-wrapper {
+    .indented-box:last-child  {
+        .line {
+            .upper-line-div {
+                border-bottom-left-radius: 5px;
+            }
+            .lower-line-div {
+                border-left: none
+            }
+        }
+    }
+}
+
+.line {
+    width: 20%;
+    .upper-line-div {
+        border-left: 1px solid black;
+        border-bottom: 1px solid black;
+        margin-left: 50%;
+        height: 50%; 
+    }
+    .lower-line-div {
+        border-left: 1px solid black;
+        margin-left: 50%;
+        height: 50%; 
+    }
+}
+
+// .upper-information-container {
+//     padding-bottom: 15px;
+// }
+.informationContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    // justify-content: center;
+    // align-items: flex-start;
+    height: 100%;
+    width: 100%;
+
+    .box-content {
+        padding-left: 20px;
+        border-style: solid;
+        border-color: lightgrey;
+        border-width: 1px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        background-color: #F0F0F0;
+        height: 75px;
+        margin: 8px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    
+        .valera-font {
+            @include Valera-title;
+        }
+        .valera-small {
+            @include Valera-small;
+        }
+    }
+}

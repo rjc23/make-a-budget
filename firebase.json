@@ -1,6 +1,9 @@
 {
+  "database": {
+    "rules": "database.rules.json"
+  },
   "hosting": {
-    "public": "dist/make-a-budget/",
+    "public": "dist/make-a-budget",
     "ignore": [
       "firebase.json",
       "**/.*",

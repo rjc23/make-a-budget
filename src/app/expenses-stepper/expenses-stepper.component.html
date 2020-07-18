@@ -1,0 +1,23 @@
+<div class="expenses-stepper-wrapper">
+    <div class="total-expenses">
+        <div class="informationContainer upper-information-container">
+            <div class="box-content">
+                <div class="valera-font">
+                    <b><span class="floatBottom">Total expenses</span></b>
+                </div>
+                <div class="valera-font">
+                    {{boxes.totalsYear.totalExpenses | currency}}&nbsp;/ <span class="valera-small">year</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="expenses-boxes">
+        <div class="fixed-expenses">
+            <app-stepper [type]="type1" [boxes]="boxes" [specificBox]="boxes.expenses"></app-stepper>
+        </div>
+        <div class="variable-expenses">
+            <app-stepper [type]="type2" [boxes]="boxes" [specificBox]="boxes.varexpenses"></app-stepper>
+        </div>
+    </div>
+</div>

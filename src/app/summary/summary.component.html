@@ -1,0 +1,24 @@
+<div class="summary-wrapper">
+    <h3 class="summary-title"><b>Your summary</b></h3>
+    <p class="summary-paragraph">Here is your budget summary. Use the buttoms below to change all values to different time periods </p>
+    <div class="button-wrapper">
+        <button class="btn btn-success">Per week</button>
+        <button class="btn btn-success">Per two weeks</button>
+        <button class="btn btn-success">Per month</button>
+        <button class="btn btn-success">Per year</button>
+        <button class="btn btn-info">Revert to original</button>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <div class="section-container">
+        <div class="section">
+            <app-stepper [type]="type[0]" [boxes]="boxes" [specificBox]="boxes.income"></app-stepper>
+        </div>
+        <div class="section-expenses">
+            <app-expenses-stepper [type1]="type[1]" [type2]="type[2]" [boxes]="boxes"></app-expenses-stepper>
+        </div>
+    </div>
+</div>

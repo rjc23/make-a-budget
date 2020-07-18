@@ -1,0 +1,16 @@
+@import './../../layout/colours.scss';
+@import './../../layout/breakpoints.scss';
+
+.content {
+    padding-left: 8px;
+    margin-top: 30px;
+    margin-bottom: 100px;
+
+    h2 {
+        @include theFont;
+        font-size: 30px;
+    }
+    p {
+        @include Valera-title;
+    }
+}

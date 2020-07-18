@@ -1,0 +1,99 @@
+<div class="stepper-wrapper">
+
+    <div class="box">
+        <div class="informationContainer upper-information-container">
+            <div class="box-content">
+                <div class="valera-font">
+                    <b><span class="floatBottom">Total {{type}}</span></b>
+                </div>
+                <div class="valera-font">
+                    <ng-container *ngIf="type === 'income'">
+                        <ng-container *ngIf="boxes.show === 'year'">
+                            {{boxes.totalsYear.income | currency}}&nbsp;/ <span class="valera-small">year</span>
+                        </ng-container>
+                        <ng-container *ngIf="boxes.show === 'month'">
+                            {{boxes.totalsMonth.income | currency}}&nbsp;/ <span class="valera-small">month</span>
+                        </ng-container>
+                        <ng-container *ngIf="boxes.show === 'two-weeks'">
+                            {{boxes.totalsTwoWeek.income | currency}}&nbsp;/ <span class="valera-small">two-weeks</span>
+                        </ng-container>
+                        <ng-container *ngIf="boxes.show === 'week'">
+                            {{boxes.totalsWeek.income | currency}}&nbsp;/ <span class="valera-small">week</span>
+                        </ng-container> 
+                    </ng-container>
+
+                    <ng-container *ngIf="type === 'fixed expenses'">
+                        <ng-container *ngIf="boxes.show === 'year'">
+                            {{boxes.totalsYear.expenses | currency}}&nbsp;/ <span class="valera-small">year</span>
+                        </ng-container>
+                        <ng-container *ngIf="boxes.show === 'month'">
+                            {{boxes.totalsMonth.expenses | currency}}&nbsp;/ <span class="valera-small">month</span>
+                        </ng-container>
+                        <ng-container *ngIf="boxes.show === 'two-weeks'">
+                            {{boxes.totalsTwoWeek.expenses | currency}}&nbsp;/ <span class="valera-small">two-weeks</span>
+                        </ng-container>
+                        <ng-container *ngIf="boxes.show === 'week'">
+                            {{boxes.totalsWeek.expenses | currency}}&nbsp;/ <span class="valera-small">week</span>
+                        </ng-container>
+                    </ng-container>
+                    <ng-container *ngIf="type === 'variable expenses'">
+                                                <ng-container *ngIf="boxes.show === 'year'">
+                            {{boxes.totalsYear.varexpenses | currency}}&nbsp;/ <span class="valera-small">year</span>
+                        </ng-container>
+                        <ng-container *ngIf="boxes.show === 'month'">
+                            {{boxes.totalsMonth.varexpenses | currency}}&nbsp;/ <span class="valera-small">month</span>
+                        </ng-container>
+                        <ng-container *ngIf="boxes.show === 'two-weeks'">
+                            {{boxes.totalsTwoWeek.varexpenses | currency}}&nbsp;/ <span class="valera-small">two-weeks</span>
+                        </ng-container>
+                        <ng-container *ngIf="boxes.show === 'week'">
+                            {{boxes.totalsWeek.varexpenses | currency}}&nbsp;/ <span class="valera-small">week</span>
+                        </ng-container>
+                    </ng-container>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="totals-wrapper">
+        <div class="box indented-box" *ngFor="let box of specificBox">
+            <div class="line">
+                <div class="upper-line-div">
+
+                </div>
+                <div class="lower-line-div">
+
+                </div>
+            </div>
+            <div class="informationContainer">
+                <div class="box-content">
+                    <ng-container *ngIf="type === 'income'">
+                        <div class="valera-font">
+                            <b><span class="floatBottom">{{box.incomeName}}</span></b>
+                        </div>
+                        <div class="valera-font">
+                            {{box.amount | currency}}&nbsp;/ <span class="valera-small">{{box.per}}</span>
+                        </div>
+                    </ng-container>
+                    <ng-container *ngIf="type === 'fixed expenses'">
+                        <div class="valera-font">
+                            <b><span class="floatBottom">{{box.incomeName}}</span></b>
+                        </div>
+                        <div class="valera-font">
+                            {{box.amount | currency}}&nbsp;/ <span class="valera-small">{{box.per}}</span>
+                        </div>
+                    </ng-container>
+                    <ng-container *ngIf="type === 'variable expenses'">
+                        <div class="valera-font">
+                            <b><span class="floatBottom">{{box.incomeName}}</span></b>
+                        </div>
+                        <div class="valera-font">
+                            {{box.amount | currency}}&nbsp;/ <span class="valera-small">{{box.per}}</span>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>

@@ -13,6 +13,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutComponent } from './layout/layout.component';
 import { BannerComponent } from './banner/banner.component';
 import { FormDataService } from './form-data.service';
+import { ContentTopComponent } from './content-top/content-top.component';
+
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { FormsModule } from '@angular/forms';
+import { environment } from 'src/environments/environment';
+import { SummaryComponent } from './summary/summary.component';
+import { StepperComponent } from './stepper/stepper.component';
+import { ExpensesStepperComponent } from './expenses-stepper/expenses-stepper.component';
 
 
 @NgModule({
@@ -21,14 +30,20 @@ import { FormDataService } from './form-data.service';
     MakeABudgetHeaderComponent,
     IncomeComponent,
     LayoutComponent,
-    BannerComponent
+    BannerComponent,
+    ContentTopComponent,
+    SummaryComponent,
+    StepperComponent,
+    ExpensesStepperComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireAuthModule,
+    FormsModule
   ],
   providers: [FormDataService],
   bootstrap: [AppComponent]
