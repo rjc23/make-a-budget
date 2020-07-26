@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+
 
 $base-red: #ae4d53;
 $base-orange: #e8af70;
@@ -8,21 +9,26 @@ $base-yellow: #f8ec9e;
 $base-green: #1b5f59;
 $base-white: #ffffff;
 
-$header-font: 'Open Sans', cursive;
-$main-font: 'Ubuntu', sans-serif;
+$header-font: 'Shadows Into Light', cursive;
+$main-font: 'Titillium Web', sans-serif;
 
 @mixin theFont {
     font-family: $main-font;
 }
 //Fonts and Sizes
 @mixin Staat-large-h1 {
-    font-family: $main-font;
-    font-size: 52px;
+    font-family: $header-font;
+    font-size: 72px;
 }
 
 @mixin Staat-large-h1-mobile {
-    font-family: $main-font;
+    font-family: $header-font;
     font-size: 32px;
+}
+
+@mixin Staat-large-h1-tablet {
+    font-family: $header-font;
+    font-size: 48px;
 }
 
 @mixin Staat-large {
@@ -30,9 +36,9 @@ $main-font: 'Ubuntu', sans-serif;
     font-size: 24px;
 }
 
-@mixin Staat-large-mobile {
+@mixin Staat-large-h4 {
     font-family: $main-font;
-    font-size: 24px;
+    font-size: 20px;
 }
 
 //add button

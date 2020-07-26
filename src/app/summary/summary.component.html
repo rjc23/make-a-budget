@@ -1,21 +1,51 @@
 <div class="summary-wrapper">
     <h3 class="summary-title"><b>Your summary</b></h3>
-    <p class="summary-paragraph">Here is your budget summary. Use the buttoms below to change all values to different time periods </p>
+    <p class="summary-paragraph">Here is your budget summary. Use the buttons below to convert all income and expenses values to different time frequencies</p>
+    
+    
     <div class="button-wrapper">
-        <button class="btn btn-success">Per week</button>
-        <button class="btn btn-success">Per two weeks</button>
-        <button class="btn btn-success">Per month</button>
-        <button class="btn btn-success">Per year</button>
-        <button class="btn btn-info">Revert to original</button>
+        <button (click)="convertTo('week')" class="btn btn-success">Per Week</button>
+        <button (click)="convertTo('two-weeks')" class="btn btn-success">Per Two weeks</button>
+        <button (click)="convertTo('month')" class="btn btn-success">Per Month</button>
+        <button (click)="convertTo('year')" class="btn btn-success">Per Year</button>
+        <button (click)="convertTo('original')" class="btn btn-info">Revert to original</button>
     </div>
 
     <br>
     <br>
     <br>
 
+    <h4 class="summary-subtitle"><b>Total savings</b></h4>
+    <p class="summary-paragraph">Your total income minus total expenses</p>
+
+    <div class="income-minus-expenses">
+        <div class="informationContainer">
+            <div class="box-content">
+                <div class="valera-font">
+                    <b><span class="floatBottom">Savings </span></b>
+                </div>
+                <div class="valera-font">
+                    <ng-container *ngIf="boxes.show === 'year'">
+                        {{boxes.totalsYear.incomeMinusExpenses | currency}}&nbsp;/ <span class="valera-small">year</span>
+                    </ng-container>
+                    <ng-container *ngIf="boxes.show === 'month'">
+                        {{boxes.totalsMonth.incomeMinusExpenses | currency}}&nbsp;/ <span class="valera-small">month</span>
+                    </ng-container>
+                    <ng-container *ngIf="boxes.show === 'two-weeks'">
+                        {{boxes.totalsTwoWeek.incomeMinusExpenses | currency}}&nbsp;/ <span class="valera-small">two-weeks</span>
+                    </ng-container>
+                    <ng-container *ngIf="boxes.show === 'week'">
+                        {{boxes.totalsWeek.incomeMinusExpenses | currency}}&nbsp;/ <span class="valera-small">week</span>
+                    </ng-container> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h4 class="summary-subtitle"><b>Income and expenses</b></h4>
     <div class="section-container">
         <div class="section">
-            <app-stepper [type]="type[0]" [boxes]="boxes" [specificBox]="boxes.income"></app-stepper>
+            <app-stepper [type]="type[0]" [boxes]="boxes" [specificBox]="boxes.incomeSummary"></app-stepper>
         </div>
         <div class="section-expenses">
             <app-expenses-stepper [type1]="type[1]" [type2]="type[2]" [boxes]="boxes"></app-expenses-stepper>

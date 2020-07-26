@@ -14,16 +14,28 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding-left: 60px;
+    padding-left: 40px;
+    padding-right: 40px;
 
     h1 {
         @include Staat-large-h1-mobile;
         margin-bottom: 0;
     }
 }
+@include respond-to(small) {
+    .banner {
+        padding-left: 60px;
+        padding-right: 60px;
+        h1 {
+            @include Staat-large-h1-tablet;
+        }
+    }
+}
 
 @include respond-to(medium) {
     .banner {
+        padding-left: 60px;
+        padding-right: 60px;
         h1 {
             @include Staat-large-h1;
         }

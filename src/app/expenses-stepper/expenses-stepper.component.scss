@@ -2,24 +2,44 @@
 @import './../../layout/breakpoints.scss';
 
 .expenses-stepper-wrapper {
-    padding-left: 28px;
+    @include respond-to(medium) {
+        padding-left: 28px;
+    }
 }
 .total-expenses {
     width: 100%;
-    display: flex;
-    justify-content: center;
+
+    @include respond-to(small) {
+        display: flex;
+        justify-content: center; 
+    }
+
 }
 
 .expenses-boxes {
     display: flex;
+    flex-direction: column;
     flex-wrap: nowrap;
+    padding-left: 20px;
+    padding-right: 0px;
 
     .fixed-expenses {
         flex-grow: 1;
+        margin-bottom: 7%;
+
+        @include respond-to(small) {
+            margin-bottom: 0;
+        }
     }
 
     .variable-expenses {
         flex-grow: 1;
+    }
+
+    @include respond-to(small) {
+        flex-direction: row;
+        padding-left: 0px;
+        padding-right: 0px;
     }
 }
 
@@ -28,7 +48,6 @@
     flex-direction: column;
     flex-wrap: wrap;
     height: 100%;
-    width: 50%;
 
     .box-content {
         padding-left: 20px;
@@ -51,5 +70,9 @@
         .valera-small {
             @include Valera-small;
         }
+    }
+
+    @include respond-to(small) {
+        width: 50%;
     }
 }

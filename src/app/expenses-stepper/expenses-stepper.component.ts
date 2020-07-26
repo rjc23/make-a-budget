@@ -15,8 +15,6 @@ export class ExpensesStepperComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.type1);
-    console.log(this.type2);
   }
 
 }

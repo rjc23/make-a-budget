@@ -10,6 +10,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class IncomeComponent implements OnInit, DoCheck {
 
   @Input('boxes') boxes: any;
+  @Input('boxesSummary') boxesSummary: any;
   @Input('type') type: any;
 
   showNewElement: boolean;
@@ -49,16 +50,24 @@ export class IncomeComponent implements OnInit, DoCheck {
 
   submitIncome() {
     if(this.myForm.valid) {
+      this.dataservice.revertToOriginal();
       this.boxes.push(this.myForm.value);
+      const copyValue = JSON.parse(JSON.stringify(this.myForm.value));
+      this.boxesSummary.push(copyValue);
       this.dataservice.recalculateBoxes(this.type);
       this.myForm.reset();
       this.showNewElement = false;
+      this.dataservice.setLocalStorage();
     }
   }
 
   removeIncome(input:any) {
+    this.dataservice.revertToOriginal();
     this.boxes.splice(input,1);
+    this.boxesSummary.splice(input,1);
     this.dataservice.recalculateBoxes(this.type);
+    this.dataservice.setLocalStorage();
+
    }
 
    clearBoxes() {

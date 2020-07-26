@@ -6,7 +6,18 @@
                     <b><span class="floatBottom">Total expenses</span></b>
                 </div>
                 <div class="valera-font">
-                    {{boxes.totalsYear.totalExpenses | currency}}&nbsp;/ <span class="valera-small">year</span>
+                    <ng-container *ngIf="boxes.show === 'year'">
+                        {{boxes.totalsYear.totalExpenses | currency}}&nbsp;/ <span class="valera-small">year</span>
+                    </ng-container>
+                    <ng-container *ngIf="boxes.show === 'month'">
+                        {{boxes.totalsMonth.totalExpenses | currency}}&nbsp;/ <span class="valera-small">month</span>
+                    </ng-container>
+                    <ng-container *ngIf="boxes.show === 'two-weeks'">
+                        {{boxes.totalsTwoWeek.totalExpenses | currency}}&nbsp;/ <span class="valera-small">two-weeks</span>
+                    </ng-container>
+                    <ng-container *ngIf="boxes.show === 'week'">
+                        {{boxes.totalsWeek.totalExpenses | currency}}&nbsp;/ <span class="valera-small">week</span>
+                    </ng-container> 
                 </div>
             </div>
         </div>
@@ -14,10 +25,10 @@
 
     <div class="expenses-boxes">
         <div class="fixed-expenses">
-            <app-stepper [type]="type1" [boxes]="boxes" [specificBox]="boxes.expenses"></app-stepper>
+            <app-stepper [type]="type1" [boxes]="boxes" [specificBox]="boxes.expensesSummary"></app-stepper>
         </div>
         <div class="variable-expenses">
-            <app-stepper [type]="type2" [boxes]="boxes" [specificBox]="boxes.varexpenses"></app-stepper>
+            <app-stepper [type]="type2" [boxes]="boxes" [specificBox]="boxes.varExpensesSummary"></app-stepper>
         </div>
     </div>
 </div>
