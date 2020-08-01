@@ -1,3 +1,4 @@
+import { ValidationService } from './validation.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -15,13 +16,13 @@ import { BannerComponent } from './banner/banner.component';
 import { FormDataService } from './form-data.service';
 import { ContentTopComponent } from './content-top/content-top.component';
 
-import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { FormsModule } from '@angular/forms';
-import { environment } from 'src/environments/environment';
 import { SummaryComponent } from './summary/summary.component';
 import { StepperComponent } from './stepper/stepper.component';
 import { ExpensesStepperComponent } from './expenses-stepper/expenses-stepper.component';
+import { HowToUseComponent } from './how-to-use/how-to-use.component';
+import { MainContentComponent } from './main-content/main-content.component';
 
 
 @NgModule({
@@ -34,7 +35,9 @@ import { ExpensesStepperComponent } from './expenses-stepper/expenses-stepper.co
     ContentTopComponent,
     SummaryComponent,
     StepperComponent,
-    ExpensesStepperComponent
+    ExpensesStepperComponent,
+    HowToUseComponent,
+    MainContentComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,7 @@ import { ExpensesStepperComponent } from './expenses-stepper/expenses-stepper.co
     AngularFireAuthModule,
     FormsModule
   ],
-  providers: [FormDataService],
+  providers: [FormDataService, ValidationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

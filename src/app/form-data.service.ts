@@ -57,7 +57,7 @@ export class FormDataService {
     "income": [    
       {
         incomeName: 'Work',
-        amount: 40000,
+        amount: 80000,
         per: 'year'
       },
       {
@@ -118,7 +118,7 @@ export class FormDataService {
     "incomeSummary": [
       {
         incomeName: 'Work',
-        amount: 40000,
+        amount: 80000,
         per: 'year'
       },
       {
@@ -217,6 +217,10 @@ export class FormDataService {
   }
 
   public prepopulatedIncomeData() {
+    let local = localStorage.getItem('my-budget');
+    if(local !== null) {
+      this.boxes = JSON.parse(local);
+    }
     return this.boxes;
   }
 
@@ -303,6 +307,7 @@ export class FormDataService {
     if(type === 'income') {
       total = this.calculateIndividualTotal('income');
       this.populateTotals('income', total);
+      this.calculateTotalExpenses();
     }
     else if (type === 'fixed expenses') {
       total = this.calculateIndividualTotal('expenses');
@@ -344,7 +349,6 @@ export class FormDataService {
       if(this.boxes.income[i].per === 'year') {
         this.boxes.incomeSummary[i].amount = this.boxes.income[i].amount/this.weekToYear;
         this.boxes.incomeSummary[i].per = 'week';
-        console.log('here');
       }
       else if(this.boxes.income[i].per === 'month') {
         this.boxes.incomeSummary[i].amount = this.boxes.income[i].amount/this.weekToMonth;

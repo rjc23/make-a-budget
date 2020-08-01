@@ -1,17 +1,55 @@
 @import './../../layout/colours.scss';
 @import './../../layout/breakpoints.scss';
 
+.content {
+    padding-top: 30px;
+    padding-left: 8px;
+    padding-right: 8px;
+
+    @include respond-to(small) {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+}
+
+.extra {
+    text-align: center;
+    padding: 0 !important;
+}
+
 .income-text {
     padding-left: 8px;
     @include Staat-large;
     margin-bottom: 6px;
 }
 
-.content {
+.content-text {
     padding-left: 8px;
-    padding-bottom: 30px;
+    // padding-bottom: 30px;
     @include Valera-title;
 }
+
+ul {
+    @include Valera-title;
+}
+
+.three-container {
+    display: flex;
+    margin-top: 30px;
+}
+
+.inside-container {
+    // border-style: solid;
+    // border-width: 1px;
+    // border-color: red;
+    // height: auto;
+    // display: flex;
+    // flex-basis: 33.333%;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+}
+
 
 .buttons {
     padding-left: 8px;
@@ -232,6 +270,10 @@
     }
 }
 
+.minimise-box {
+    width: 100%;
+}
+
 
 
 
@@ -253,24 +295,36 @@
 }
 
 @include respond-to(small) {
+    .minimise-box {
+        width: 50%;
+    }
     .box {
         flex-basis: 50%;
     }
 }
 
 @include respond-to(medium) {
+    .minimise-box {
+        width: 33.3333%;
+    }
     .box {
         flex-basis: 33.3333%;
     }
 }
 
 @include respond-to(large) {
+    .minimise-box {
+        width: 25%;
+    }
     .box {
         flex-basis: 25%;
     }
 }
 
 @include respond-to(xlarge) {
+    .minimise-box {
+        width: 20%;
+    }
     .box {
         flex-basis: 20%;
     }

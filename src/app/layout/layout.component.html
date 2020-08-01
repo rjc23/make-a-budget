@@ -1,29 +1,4 @@
 <make-a-budget-header></make-a-budget-header>
 <div class="main">
-    <app-banner></app-banner>
-    <br>
-    <br>
-    <div class="content">
-        <app-content-top></app-content-top>
-        <div class="spacing">
-            <app-income [boxes]="boxes.income" [boxesSummary]="boxes.incomeSummary" [type]="boxTypes[0]">
-                Add all of your income here. Examples include your salary, side hustle etc.
-            </app-income>
-        </div>
-        <div class="spacing">
-            <app-income [boxes]="boxes.expenses" [boxesSummary]="boxes.expensesSummary" [type]="boxTypes[1]">
-                Add all of your fixed expenses here. These are expenses that don't change and are generally reoccuring. Examples of these include 
-                accomodation expenses, registration/insurances, subscriptions e.g. Netflix, Amazon Prime, phone bill etc.
-            </app-income>
-        </div>
-        <div class="spacing">
-            <app-income [boxes]="boxes.varexpenses" [boxesSummary]="boxes.varExpensesSummary" [type]="boxTypes[2]">
-                Add all of your variable expenses here. Examples of these include food shopping, gas/electricity/water bills, petrol etc.
-            </app-income>
-        </div>
-
-        <app-summary [boxes]="boxes" [type]="boxTypes"></app-summary>
-        
-    </div>
-    
+    <router-outlet></router-outlet>
 </div>

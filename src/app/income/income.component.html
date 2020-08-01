@@ -44,7 +44,12 @@
           <div class="input-fields">
             <!-- income name -->
             <div class="income-name">
-              <input formControlName="incomeName" type="text" maxlength="30" class="form-control" placeholder="Income Name" required>
+              <div *ngIf="type === 'income'">
+                <input formControlName="incomeName" type="text" maxlength="30" class="form-control" placeholder="Income name">
+              </div>
+              <div *ngIf="type !== 'income'">
+                <input formControlName="incomeName" type="text" maxlength="30" class="form-control" placeholder="Expense name">
+              </div>
             </div>
             <!-- cost per -->
             <div class="cost-per">
@@ -54,8 +59,9 @@
               </div>
               <span class="valera-font">&nbsp;/&nbsp;</span>
               <div class="per-dropdown">
-                <select formControlName="per" class="form-control">
-                  <option value="week" selected>Week</option>
+                <select formControlName="per" class="form-control drop-down-box">
+                  <option value="" disabled>Frequency</option>
+                  <option value="week">Week</option>
                   <option value="two-weeks">Two weeks</option>
                   <option value="month">Month</option>
                   <option value="year">Year</option>

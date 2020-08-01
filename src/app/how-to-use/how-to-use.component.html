@@ -1,0 +1,123 @@
+<div class="content">
+    <h3 class="income-text"><b>How to use</b></h3>
+    <br>
+    <p class="content-text">The purpose of this website is to create a summary of your existing budget. Once your summary has been created,
+        you will be able to see your total saving and an overview of your income and expenses. You can also convert these to different time frequencies, for example,
+        if you pay $9.99/month for Netflix, easily change it to see how much that costs per year.
+        <br>
+        <br>
+    </p>
+    <p class="content-text">There are three sections</p>
+        <ul>
+            <li>Income</li>
+            <li>Fixed Expenses</li>
+            <li>Variable Expenses</li>
+        </ul>
+    <br>
+    <br>
+    <!-- <div class="three-container"> -->
+        <div class="content-text">To add an income/expense to each section click this button</div>
+        <div class="inside-container">
+            
+            
+            <div class="centerAdd">
+                <div class="addButton-box-content">
+                  <div class="glyphicon glyphicon-plus"></div>
+                  <div class="add-button">&nbsp;Add</div>
+                </div>
+              </div>
+              <!-- <div class="content-text extra">To add an income/expense to each section click this button</div> -->
+        </div>
+        <br>
+        <br>
+        <br>
+
+        <div class="content-text">This box will then appear. First, add the name of the income/expense, then add the amount and finally the frequency e.g. Work, $40,000 per year.
+            To add this, click the green tick, to cancel, click the red X.
+            </div>
+        <div class="inside-container minimise-box">
+            <div *ngIf="showNewElement" class="box">
+                <div class="box-content box-content-add-new-income">
+                  <form [formGroup]="myForm">
+                    <div class="form-wrapper">
+                      <!-- input fields -->
+                      <div class="input-fields">
+                        <!-- income name -->
+                        <div class="income-name">
+                          <div *ngIf="type === 'income'">
+                            <input formControlName="incomeName" type="text" maxlength="30" class="form-control" placeholder="Income name">
+                          </div>
+                          <div *ngIf="type !== 'income'">
+                            <input formControlName="incomeName" type="text" maxlength="30" class="form-control" placeholder="Expense name">
+                          </div>
+                        </div>
+                        <!-- cost per -->
+                        <div class="cost-per">
+                          <div class="input-icon">
+                            <input formControlName="amount" type="number" maxlength="12" placeholder="0.00" class="form-control">
+                            <i>$</i>
+                          </div>
+                          <span class="valera-font">&nbsp;/&nbsp;</span>
+                          <div class="per-dropdown">
+                            <select formControlName="per" class="form-control drop-down-box">
+                              <option value="" disabled>Frequency</option>
+                              <option value="week">Week</option>
+                              <option value="two-weeks">Two weeks</option>
+                              <option value="month">Month</option>
+                              <option value="year">Year</option>
+                            </select>
+                          </div>
+                        </div>
+            
+                      </div>
+                      <!-- submit & delete buttons -->
+                      <div class="submit-and-delete">
+                        <div class="glyphicon glyphicon-ok add-button">
+                        </div>
+                        <div class="glyphicon glyphicon-remove remove-button">
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+
+        <div class="content-text">If the values added are vaild, then it will be converted to this box. To remove the income/expense, click the X in the top right hand corner. 
+        </div>
+        <div class="inside-container minimise-box">
+            <div class="box">
+                <div class="box-content">
+                  <div class="exit">
+                    <span class="glyphicon glyphicon-remove"></span>
+                  </div>
+            
+                  <div class="informationContainer">
+                    <div class="valera-font">
+                      <b><span class="floatBottom">Work</span></b>
+                    </div>
+                    <div class="valera-font">
+                      {{amount | currency}} / <span class="valera-small">year</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <div class="content-text">Thats it, you're ready to start entering your budget!
+            </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+    <!-- </div> -->
+</div>

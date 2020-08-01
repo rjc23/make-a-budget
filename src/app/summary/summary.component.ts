@@ -1,5 +1,8 @@
+
 import { FormDataService } from './../form-data.service';
 import { Component, OnInit, Input } from '@angular/core';
+import * as JSPdf from 'jspdf'; 
+import html2canvas from 'html2canvas'; 
 
 @Component({
   selector: 'app-summary',
@@ -14,7 +17,6 @@ export class SummaryComponent implements OnInit {
   constructor(private dataservice: FormDataService) { }
 
   ngOnInit(): void {
-    console.log(this.boxes);
   }
 
   public convertTo(input: any) {
@@ -33,5 +35,14 @@ export class SummaryComponent implements OnInit {
     else if(input === 'original') {
       this.dataservice.revertToOriginal();
     }
+  }
+
+  async createPDF () {
+    // let doc = new jsPDF('p', 'pt', 'a4')
+    // let canvas = await html2canvas(document.getElementById('content-to-export'))
+    // let imgData = canvas.toDataURL('image/png') // optional
+    // doc.addImage(imgData, 'PNG') // imgData or canvas
+    // document.body.appendChild(canvas) // It's for see the canvas
+    // doc.save('test.pdf')
   }
 }

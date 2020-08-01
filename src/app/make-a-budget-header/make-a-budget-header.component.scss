@@ -5,22 +5,55 @@
     color: $base-white;
     
     height: 46px;
-    line-height: 46px;
+    line-height: 36px;
     width: 100%;
     background-color: black;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     box-shadow: 2px 2px 3px #ccc;
     padding-left: 14px;
     padding-right: 14px;
+    padding-top: 5px;
+    margin-bottom: 3px;
     
 }
 
 .leftside {
-    width: 90%;
     float: left;
 }
 
 .rightside {
-    width: 10%;
     float: right;
+    display: flex;
+    // align-items: center;
+    justify-content: center;
+    @include Valera-title;
 }
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    //overflow: hidden;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    //display: block;
+    color: white;
+    text-align: center;
+    padding: 0px 16px;
+    text-decoration: none;
+    @include Valera-title;
+  }
+  
+  .active {
+    background-color:#4caf4f;
+  }
+
+  .how-to-use {
+    background-color: $base-orange;
+    border-radius: 6px;
+  }

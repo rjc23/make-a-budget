@@ -1,6 +1,7 @@
+import { ValidationService } from './../validation.service';
 import { FormDataService } from './../form-data.service';
 import { Component, OnInit, Input, DoCheck} from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-income',
@@ -19,15 +20,18 @@ export class IncomeComponent implements OnInit, DoCheck {
   isSaved: boolean;
   isLoading: boolean = true;
 
-  constructor(private fb: FormBuilder, private dataservice: FormDataService) { }
+  constructor(private fb: FormBuilder, 
+      private dataservice: FormDataService, 
+      private validationService: ValidationService
+    ) { }
 
   ngOnInit(): void {
     //Initalise form
     this.showNewElement = false;
     this.myForm = this.fb.group({
-      incomeName: '',
-      amount: '',
-      per: ''
+      incomeName: ['', Validators.required],
+      amount: ['', [Validators.required, this.validationService.amountValidator]],
+      per: ['', Validators.required]
     })
     // this.myForm.valueChanges.subscribe(console.log);
   }
@@ -79,5 +83,9 @@ export class IncomeComponent implements OnInit, DoCheck {
    undoClear() {
      this.boxes = this.savedBoxes;
      this.isSaved = false;
+   }
+
+   isFormValid(form: any){
+      return false;
    }
 }
