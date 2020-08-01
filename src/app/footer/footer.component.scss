@@ -6,12 +6,13 @@
     padding-right: 8px;
     padding-bottom: 30px;
 
+    .float-right {
+        text-align: center;
+        float: none !important;
+    }
+
     @include respond-to(small) {
         padding-left: 32px;
         padding-right: 32px;
-    }
-
-    .float-right {
-        float: right;
     }
 }
