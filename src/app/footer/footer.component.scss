@@ -4,18 +4,14 @@
 .content {
     padding-left: 8px;
     padding-right: 8px;
+    padding-bottom: 30px;
 
     @include respond-to(small) {
         padding-left: 32px;
         padding-right: 32px;
     }
-}
 
-.spacing {
-    margin-bottom: 60px;
-}
-
-.main {
-    position: relative;
-    min-height: calc(90vh);
+    .float-right {
+        float: right;
+    }
 }

@@ -23,6 +23,7 @@ import { StepperComponent } from './stepper/stepper.component';
 import { ExpensesStepperComponent } from './expenses-stepper/expenses-stepper.component';
 import { HowToUseComponent } from './how-to-use/how-to-use.component';
 import { MainContentComponent } from './main-content/main-content.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { MainContentComponent } from './main-content/main-content.component';
     StepperComponent,
     ExpensesStepperComponent,
     HowToUseComponent,
-    MainContentComponent
+    MainContentComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class FormDataService {
 
-  weekToMonth = 4.34;
+  weekToMonth = 4.333;
   weekToYear = 52;
   boxtypes: string[] = ["income", "fixed expenses", "variable expenses"];
   boxes: any = {
@@ -344,6 +344,7 @@ export class FormDataService {
   public showWeekOnSummary() {
     this.boxes.show = 'week';
     this.boxes.state = 'week';
+    console.log(this.boxes);
 
     for(let i = 0; i < this.boxes.incomeSummary.length; i++) {
       if(this.boxes.income[i].per === 'year') {
@@ -351,7 +352,9 @@ export class FormDataService {
         this.boxes.incomeSummary[i].per = 'week';
       }
       else if(this.boxes.income[i].per === 'month') {
-        this.boxes.incomeSummary[i].amount = this.boxes.income[i].amount/this.weekToMonth;
+        console.log('here');
+        console.log(this.boxes.income[i].amount);
+        this.boxes.incomeSummary[i].amount = this.boxes.income[i].amount*12/this.weekToYear;
         this.boxes.incomeSummary[i].per = 'week';
       }
       else if(this.boxes.income[i].per === 'two-weeks') {
@@ -370,7 +373,7 @@ export class FormDataService {
         this.boxes.expensesSummary[i].per = 'week';
       }
       else if(this.boxes.expenses[i].per === 'month') {
-        this.boxes.expensesSummary[i].amount = this.boxes.expenses[i].amount/this.weekToMonth;
+        this.boxes.expensesSummary[i].amount = this.boxes.expenses[i].amount*12/this.weekToYear;
         this.boxes.expensesSummary[i].per = 'week';
       }
       else if(this.boxes.expenses[i].per === 'two-weeks') {
@@ -389,7 +392,7 @@ export class FormDataService {
         this.boxes.varExpensesSummary[i].per = 'week';
       }
       else if(this.boxes.varexpenses[i].per === 'month') {
-        this.boxes.varExpensesSummary[i].amount = this.boxes.varexpenses[i].amount/this.weekToMonth;
+        this.boxes.varExpensesSummary[i].amount = this.boxes.varexpenses[i].amount*12/this.weekToYear;
         this.boxes.varExpensesSummary[i].per = 'week';
       }
       else if(this.boxes.varexpenses[i].per === 'two-weeks') {
@@ -413,7 +416,7 @@ export class FormDataService {
         this.boxes.incomeSummary[i].per = 'month';
       }
       else if(this.boxes.income[i].per === 'two-weeks') {
-        this.boxes.incomeSummary[i].amount = (this.boxes.income[i].amount/2)*this.weekToMonth;
+        this.boxes.incomeSummary[i].amount = this.boxes.income[i].amount*26/12;
         this.boxes.incomeSummary[i].per = 'month';
       }
       else if(this.boxes.income[i].per === 'month') {
@@ -421,7 +424,7 @@ export class FormDataService {
         this.boxes.incomeSummary[i].per = 'month';
       }
       else if(this.boxes.income[i].per === 'week') {
-        this.boxes.incomeSummary[i].amount = this.boxes.income[i].amount*this.weekToMonth;
+        this.boxes.incomeSummary[i].amount = this.boxes.income[i].amount*52/12;
         this.boxes.incomeSummary[i].per = 'month';
       }
     }
@@ -432,7 +435,7 @@ export class FormDataService {
         this.boxes.expensesSummary[i].per = 'month';
       }
       else if(this.boxes.expenses[i].per === 'two-weeks') {
-        this.boxes.expensesSummary[i].amount = (this.boxes.expenses[i].amount/2)*this.weekToMonth;
+        this.boxes.expensesSummary[i].amount = this.boxes.expenses[i].amount*26/12;
         this.boxes.expensesSummary[i].per = 'month';
       }
       else if(this.boxes.expenses[i].per === 'month') {
@@ -440,7 +443,7 @@ export class FormDataService {
         this.boxes.expensesSummary[i].per = 'month';
       }
       else if(this.boxes.expenses[i].per === 'week') {
-        this.boxes.expensesSummary[i].amount = this.boxes.expenses[i].amount*this.weekToMonth;
+        this.boxes.expensesSummary[i].amount = this.boxes.expenses[i].amount*52/12;
         this.boxes.expensesSummary[i].per = 'month';
       }
     }
@@ -451,7 +454,7 @@ export class FormDataService {
         this.boxes.varExpensesSummary[i].per = 'month';
       }
       else if(this.boxes.varexpenses[i].per === 'two-weeks') {
-        this.boxes.varExpensesSummary[i].amount = (this.boxes.varexpenses[i].amount/2)*this.weekToMonth;
+        this.boxes.varExpensesSummary[i].amount = this.boxes.varexpenses[i].amount*26/12;
         this.boxes.varExpensesSummary[i].per = 'month';
       }
       else if(this.boxes.varexpenses[i].per === 'month') {
@@ -459,7 +462,7 @@ export class FormDataService {
         this.boxes.varExpensesSummary[i].per = 'month';
       }
       else if(this.boxes.varexpenses[i].per === 'week') {
-        this.boxes.varExpensesSummary[i].amount = this.boxes.varexpenses[i].amount*this.weekToMonth;
+        this.boxes.varExpensesSummary[i].amount = this.boxes.varexpenses[i].amount*52/12;
         this.boxes.varExpensesSummary[i].per = 'month';
       }
     }
@@ -537,7 +540,7 @@ export class FormDataService {
         this.boxes.incomeSummary[i].per = 'two-weeks';
       }
       else if(this.boxes.income[i].per === 'month') {
-        this.boxes.incomeSummary[i].amount = (this.boxes.income[i].amount/this.weekToMonth)*2;
+        this.boxes.incomeSummary[i].amount = this.boxes.income[i].amount*12/26;
         this.boxes.incomeSummary[i].per = 'two-weeks';
       }
       else if(this.boxes.income[i].per === 'two-weeks') {
@@ -556,7 +559,7 @@ export class FormDataService {
         this.boxes.expensesSummary[i].per = 'two-weeks';
       }
       else if(this.boxes.expenses[i].per === 'month') {
-        this.boxes.expensesSummary[i].amount = (this.boxes.expenses[i].amount/this.weekToMonth)*2;
+        this.boxes.expensesSummary[i].amount = this.boxes.expenses[i].amount*12/26;
         this.boxes.expensesSummary[i].per = 'two-weeks';
       }
       else if(this.boxes.expenses[i].per === 'two-weeks') {
@@ -575,7 +578,7 @@ export class FormDataService {
         this.boxes.varExpensesSummary[i].per = 'two-weeks';
       }
       else if(this.boxes.varexpenses[i].per === 'month') {
-        this.boxes.varExpensesSummary[i].amount = (this.boxes.varexpenses[i].amount/this.weekToMonth)*2;
+        this.boxes.varExpensesSummary[i].amount = this.boxes.varexpenses[i].amount*12/26;
         this.boxes.varExpensesSummary[i].per = 'two-weeks';
       }
       else if(this.boxes.varexpenses[i].per === 'two-weeks') {
